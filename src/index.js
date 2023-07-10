@@ -11,8 +11,8 @@ ReactDOM
   .render(
     <RecipeProvider>
       <BrowserRouter>
-      <App />
-    </BrowserRouter>
+        <App />
+      </BrowserRouter>
     </RecipeProvider>,
   );
 // Learn more about service workers: https://bit.ly/CRA-PWA
