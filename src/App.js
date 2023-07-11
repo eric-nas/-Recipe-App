@@ -3,7 +3,7 @@ import './App.css';
 // import rockGlass from './images/rockGlass.svg';
 import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/Login';
+import Login from './Pages/Login';
 
 function App() {
   return (
