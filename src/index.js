@@ -9,11 +9,11 @@ import RecipeProvider from './context/RecipeContext';
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(
-    <RecipeProvider>
+    <RecipeProvider.Provider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </RecipeProvider>,
+    </RecipeProvider.Provider>,
   );
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
