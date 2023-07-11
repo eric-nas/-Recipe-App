@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { fetchIngrediente, fetchNome, fetchPrimeiraLetra } from '../services/Api';
 
 export default function SearchBar() {
   const [option, setOption] = useState('');
   const [pedido, setPedido] = useState([]);
   const [input, setInput] = useState('');
+
+  useEffect(() => {
+    const { pathname } = window.location;
+    if (pathname === '/drinks' && pedido.drinks === null) {
+      global.alert('Sorry, we haven\'t found any recipes for these filters.');
+    }
+    if (pathname === '/meals' && pedido.meals === null) {
+      global.alert('Sorry, we haven\'t found any recipes for these filters.');
+    }
+  }, [pedido]);
 
   const handleInput = ({ target }) => {
     const { name } = target;
@@ -41,12 +52,28 @@ export default function SearchBar() {
     setInput(target.value);
   };
 
+  const PushDetails = () => {
+    const { push } = useHistory();
+    if (pedido.meals && pedido.meals.length === 1) {
+      push(`/meals/${pedido.meals[0].idMeal}`);
+    }
+    if (pedido.drinks && pedido.drinks.length === 1) {
+      push(`/drinks/${pedido.drinks[0].idDrink}`);
+    } else {
+      <p />;
+    }
+  };
+  PushDetails();
+  const doze = 12;
+
   return (
     <div>
       <div>
         <input
           type="text"
+          name="search"
           data-testid="search-input"
+          placeholder="Search"
           onChange={ handleSearchInput }
         />
       </div>
@@ -82,6 +109,48 @@ export default function SearchBar() {
         Buscar
 
       </button>
+      <div>
+        {
+          pedido.meals ? pedido.meals.slice(0, doze).map((item, index) => (
+            <div
+              data-testid={ `${index}-recipe-card` }
+              key={ index }
+            >
+              <p
+                data-testid={ `${index}-card-name` }
+              >
+                {item.strMeal}
+              </p>
+              <img
+                data-testid={ `${index}-card-img` }
+                src={ item.strMealThumb }
+                alt={ item.strMeal }
+              />
+            </div>
+          )) : <p />
+        }
+
+        {
+          pedido.drinks ? pedido.drinks.slice(0, doze).map((item, index) => (
+            <div
+              data-testid={ `${index}-recipe-card` }
+              key={ index }
+            >
+              <p
+                data-testid={ `${index}-card-name` }
+              >
+                {item.strDrink}
+              </p>
+              <img
+                data-testid={ `${index}-card-img` }
+                src={ item.strDrinkThumb }
+                alt={ item.strDrink }
+              />
+            </div>
+          )) : <p />
+        }
+
+      </div>
     </div>
   );
 }
