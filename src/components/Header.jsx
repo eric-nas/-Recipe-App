@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 function Header(props) {
   const { title, searchIcon } = props;
@@ -33,14 +34,7 @@ function Header(props) {
       ) }
       {showInput
       && (
-        <div>
-          <input
-            type="text"
-            name="search"
-            placeholder="Search"
-            data-testid="search-input"
-          />
-        </div>
+        <SearchBar />
       )}
       <h1 data-testid="page-title">{ title }</h1>
     </div>
