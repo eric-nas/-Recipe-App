@@ -1,16 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Recipes(props) {
   const { type } = props;
   return (
-    <div>
-      { type === 'meals'
+    <main>
+      <div>
+        { type === 'meals'
       && <Header title="Meals" searchIcon />}
-      { type === 'drinks'
+        { type === 'drinks'
       && <Header title="Drinks" searchIcon /> }
-    </div>
+
+      </div>
+      <footer style={ { position: 'fixed' } }>
+        <Footer />
+      </footer>
+    </main>
   );
 }
 
