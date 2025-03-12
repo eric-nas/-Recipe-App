@@ -2,32 +2,47 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import { profileIcon, searchIconimg, logoRecipes, iconeRecipes,
+  iconePrato } from '../assets/images';
+import './Header.css';
 
 function Header(props) {
   const { title, searchIcon } = props;
   const history = useHistory();
-  const [showInput, setShowInput] = useState(false);
+  const [showInput, setShowInput] = useState(true);
   console.log('render');
   return (
-    <div>
+    <div className="header-container">
+      <img
+        alt="logo"
+        src={ logoRecipes }
+        className="logo-recipes"
+      />
+      <img
+        alt="icone"
+        src={ iconeRecipes }
+        className="icone-recipes"
+      />
       <button
+        className="btn-profile"
         data-testid="btn-profile"
         onClick={ () => history.push('/profile') }
       >
         <img
           data-testid="profile-top-btn"
-          src="src/images/profileIcon.svg"
+          src={ profileIcon }
           alt="Icone de perfil"
         />
       </button>
       { searchIcon && (
         <button
+          className="btn-search"
           data-testid="btn-search"
           onClick={ () => setShowInput(!showInput) }
         >
           <img
             data-testid="search-top-btn"
-            src="src/images/searchIcon.svg"
+            src={ searchIconimg }
             alt="Icone de pesquisa"
           />
         </button>
@@ -36,7 +51,17 @@ function Header(props) {
       && (
         <SearchBar />
       )}
-      <h1 data-testid="page-title">{ title }</h1>
+      {title === 'Meals' && <img
+        className="dish-icon"
+        src={ iconePrato }
+        alt="icone Prato"
+      />}
+      <h1
+        className="header-title"
+        data-testid="page-title"
+      >
+        { title }
+      </h1>
     </div>
   );
 }

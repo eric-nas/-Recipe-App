@@ -14,18 +14,16 @@ import Profile from './pages/Profile';
 function App() {
   return (
 
-  // <div className="meals">
-  //   <span className="logo">TRYBE</span>
-  //   <object
-  //     className="rocksGlass"
-  //     type="image/svg+xml"
-  //     data={ rockGlass }
-  //   >
-  //     Glass
-  //   </object>
-  // </div>
-
     <Switch>
+      {/* <div className="meals">
+        <span className="logo">TRYBE</span>
+        <object
+          className="rocksGlass"
+          type="image/svg+xml"
+        >
+          Glass
+        </object>
+      </div> */}
       <Route exact path="/" component={ Login } />
       {/* <Route path="/meals" component={ Foods } /> */}
       {/* <Route path="/drinks" component={ Drinks } /> */}

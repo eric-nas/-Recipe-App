@@ -1,0 +1,63 @@
+.search-bar {
+    position: absolute;
+    top: 31%;   
+}
+
+.search-input {
+    top: 30%;
+    position: absolute;
+    width: 340px;
+    height: 40px;
+    border: 1px solid #B1B1B1;
+    border-radius: 5px;
+    left: 10px;
+    z-index: 1;
+}
+
+.search-btn {
+    background: #FCDC36;
+    color:#FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #B1B1B1;
+    border-radius: 5px;
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    top: 620%;
+    left: 50px;
+}
+
+.search-radio {
+    font-weight: bold;
+    border-radius: 5px;
+    background: #41197F;
+    color: #FFFFFF;
+    top: 200%;;
+    width: 340px;
+    height: 120px;
+    position: absolute;
+    left: 10px;
+}
+
+.ingredient-label {
+    margin-right: 15px;
+}
+
+.name-label {
+    margin-right: 15px;
+}
+
+.ingredient-radio {
+    margin-top: 30px;
+    margin-left: 12px;
+    margin-right: 5px;
+}
+
+.name-radio {
+    margin-right: 5px;
+}
+
+.first-letter-radio {
+    margin-right: 5px;
+}

@@ -9,12 +9,13 @@ import RecipeProvider from './context/RecipeProvider';
 ReactDOM
   .createRoot(document.getElementById('root'))
   .render(
-    <RecipeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </RecipeProvider>,
-
+    <div className="index-container">
+      <RecipeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </RecipeProvider>
+    </div>,
   );
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

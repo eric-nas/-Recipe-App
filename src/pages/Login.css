@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Andele Mono";
+  src: url("../assets/fonts/ANDALEMO.TTF") format("truetype");
+}
+
+.Login-top {
+  position: relative;
+}
+
+.Logo {
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+
+.Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.Tomate {
+  position: absolute;
+  top: 232px;
+  left: 0;
+}
+
+.Login-form {
+  position: absolute;
+  top: 564px;
+  left: 42px;
+}
+
+.Email-hidden {
+  display: none;
+}
+
+.Password-hidden {
+  display: none;
+}
+
+.Input {
+  width: 276px;
+height: 40px;
+top: 564px;
+left: 42px;
+border: solid 0.5px  #41197F;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.Input::placeholder {
+  text-indent: 20px;
+  font-size: 20px;
+  color: #41197F;
+  opacity: 0.5;
+}
+
+.Login-btn {
+  width: 276px;
+  height: 40px;
+  background: #FCC436;
+  color: white;
+  font-family: "Andele mono", monospace;
+  font-weight: bold;
+}

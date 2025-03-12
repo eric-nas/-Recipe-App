@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { fetchIngrediente, fetchNome, fetchPrimeiraLetra } from '../services/Api';
+import './SearchBar.css';
 
 export default function SearchBar() {
   const [option, setOption] = useState('');
@@ -67,9 +68,10 @@ export default function SearchBar() {
   const doze = 12;
 
   return (
-    <div>
+    <div className="search-bar">
       <div>
         <input
+          className="search-input"
           type="text"
           name="search"
           data-testid="search-input"
@@ -77,31 +79,40 @@ export default function SearchBar() {
           onChange={ handleSearchInput }
         />
       </div>
-      <label htmlFor="ingredient">Ingrediente</label>
-      <input
-        type="radio"
-        data-testid="ingredient-search-radio"
-        checked={ option === 'ingredient' }
-        onChange={ handleInput }
-        name="ingredient"
-      />
-      <label htmlFor="name">Nome</label>
-      <input
-        type="radio"
-        data-testid="name-search-radio"
-        checked={ option === 'name' }
-        onChange={ handleInput }
-        name="name"
-      />
-      <label htmlFor="first-letter">Primeira letra</label>
-      <input
-        type="radio"
-        data-testid="first-letter-search-radio"
-        checked={ option === 'first-letter' }
-        onChange={ handleInput }
-        name="first-letter"
-      />
+      <div className="search-radio">
+        <input
+          className="ingredient-radio"
+          type="radio"
+          data-testid="ingredient-search-radio"
+          checked={ option === 'ingredient' }
+          onChange={ handleInput }
+          name="ingredient"
+          id="ingredient"
+        />
+        <label className="ingredient-label" htmlFor="ingredient">Ingrediente</label>
+        <input
+          className="name-radio"
+          type="radio"
+          data-testid="name-search-radio"
+          checked={ option === 'name' }
+          onChange={ handleInput }
+          name="name"
+          id="name"
+        />
+        <label className="name-label" htmlFor="name">Nome</label>
+        <input
+          className="first-letter-radio"
+          type="radio"
+          data-testid="first-letter-search-radio"
+          checked={ option === 'first-letter' }
+          onChange={ handleInput }
+          name="first-letter"
+          id="first-letter"
+        />
+        <label htmlFor="first-letter">Primeira letra</label>
+      </div>
       <button
+        className="search-btn"
         type="button"
         data-testid="exec-search-btn"
         onClick={ searchFood }
