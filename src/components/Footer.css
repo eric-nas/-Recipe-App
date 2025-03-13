@@ -1,5 +1,26 @@
 .footer {
+  display: flex;
   align-items: center;
+  background: #41197F;
+  top: 650px;
+  width: 360px;
+  height: 45px;
   bottom: 0;
-  position: fixed;
+  position: absolute;
+  color: #41197F;
 }
+
+.dish-icon-footer {
+  background-color: #41197F;
+  width: 40px;
+  border: none;
+  margin-left: 150px;
+}
+
+.drink-icon-footer {
+  background-color: #41197F;
+  width: 40px;
+  border: none;
+  margin-left: 60px;
+}
+

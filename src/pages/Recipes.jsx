@@ -12,7 +12,6 @@ function Recipes(props) {
       && <Header title="Meals" searchIcon />}
         { type === 'drinks'
       && <Header title="Drinks" searchIcon /> }
-
       </div>
       <footer style={ { position: 'fixed' } }>
         <Footer />

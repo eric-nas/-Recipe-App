@@ -6,15 +6,21 @@ code {
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden;
   background-color: rgba(71, 71, 71, 0.801) !important;
 }
 
 .index-container {
+  overflow-y: auto;
   width: 360px;
-  height: 100%;
-  overflow: hidden;
+  height: 740px;
   position: relative;
   background-color: white
+}
+
+.index-container::-webkit-scrollbar {
+  display: none;
 }

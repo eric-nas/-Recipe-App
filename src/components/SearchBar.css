@@ -1,6 +1,6 @@
 .search-bar {
     position: absolute;
-    top: 31%;   
+    top: 260px;   
 }
 
 .search-input {
@@ -24,7 +24,7 @@
     position: absolute;
     width: 250px;
     height: 30px;
-    top: 620%;
+    top: 100px;
     left: 50px;
 }
 
@@ -33,7 +33,7 @@
     border-radius: 5px;
     background: #41197F;
     color: #FFFFFF;
-    top: 200%;;
+    top: 30px;;
     width: 340px;
     height: 120px;
     position: absolute;
@@ -60,4 +60,48 @@
 
 .first-letter-radio {
     margin-right: 5px;
+}
+
+.recipe-cards {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+    top: 180px;
+    width: 360px;
+    position: absolute;
+    left: 20px;
+}
+
+.recipe-img {
+    border: 1px solid #B1B1B1;
+    top: 40px;
+    /* position: absolute; */
+    width: 150px;
+    height: 150px;
+    /* margin: 10px; */
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.recipe-name {
+    /* position: absolute; */
+    /* border: 2px solid #B1B1B1; */
+    border-radius: 5px;
+    font-weight: bold;
+    /* background-color: #41197F; */
+    overflow: hidden;
+    height: 45px;
+    text-overflow: ellipsis;
+    width: 150px;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* margin: 10px; */
+}
+
+.recipe-card {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { profileIcon, searchIconimg, logoRecipes, iconeRecipes,
-  iconePrato } from '../assets/images';
+  iconePrato, iconeBebida } from '../assets/images';
 import './Header.css';
 
 function Header(props) {
@@ -55,6 +55,11 @@ function Header(props) {
         className="dish-icon"
         src={ iconePrato }
         alt="icone Prato"
+      />}
+      {title === 'Drinks' && <img
+        className="drink-icon"
+        src={ iconeBebida }
+        alt="icone Bebida"
       />}
       <h1
         className="header-title"

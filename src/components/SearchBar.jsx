@@ -120,19 +120,22 @@ export default function SearchBar() {
         Buscar
 
       </button>
-      <div>
+      <div className="recipe-cards">
         {
           pedido.meals ? pedido.meals.slice(0, doze).map((item, index) => (
             <div
+              className="recipe-card"
               data-testid={ `${index}-recipe-card` }
               key={ index }
             >
               <p
+                className="recipe-name"
                 data-testid={ `${index}-card-name` }
               >
                 {item.strMeal}
               </p>
               <img
+                className="recipe-img"
                 data-testid={ `${index}-card-img` }
                 src={ item.strMealThumb }
                 alt={ item.strMeal }
@@ -144,15 +147,18 @@ export default function SearchBar() {
         {
           pedido.drinks ? pedido.drinks.slice(0, doze).map((item, index) => (
             <div
+              className="recipe-card"
               data-testid={ `${index}-recipe-card` }
               key={ index }
             >
               <p
+                className="recipe-name"
                 data-testid={ `${index}-card-name` }
               >
                 {item.strDrink}
               </p>
               <img
+                className="recipe-img"
                 data-testid={ `${index}-card-img` }
                 src={ item.strDrinkThumb }
                 alt={ item.strDrink }
