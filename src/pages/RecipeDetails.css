@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap');
+
+.recipe-details-img {
+    width: 360px;
+    height: 190px;
+    position: absolute;
+    top: -3px;
+    border-radius: 5px;
+}
+
+.like-icon {
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    right: 10px;
+    color: #FCC436;
+}
+
+.recipe-details-category {
+    font-family: 'Epilogue';
+    font-size: 18px;
+    position: absolute;
+    color: #FCC436;
+    left: 40px;
+    top: 10px;
+    visibility: visible;
+
+}
+
+.recipe-name-details {
+    font-family: 'Epilogue';
+    letter-spacing: 2px;
+    font-weight: 900;
+    width: 360px;
+    display: flex;
+    font-size: 24px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    color: white;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.recipe-details-emoji {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+}
+
+.like-btn {
+    background: none;      
+    border: none;          
+    padding: 0;            
+    width: auto;           
+    height: auto;         
+    cursor: pointer; 
+}
+
+.recipe-ingredients-container {
+    display: flex;
+    justify-content: center;
+}
+
+.recipe-ingredients-card {
+    font-family: 'Epilogue';
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredients-h3 {
+    font-family: 'Epilogue';
+    font-weight: 600;
+    margin-top: 240px;
+    margin-left: 10px;
+    margin-bottom: 30px ;
+}
+
+.recipe-ingredients-list {
+    border: 0.55px solid #B1B1B1;
+    border-radius: 5px;
+    width: 340px;
+}
+
+.instructions-h3 {
+    font-family: 'Epilogue';
+    font-weight: 600;
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+.recipe-instructions-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    border: 0.55px solid #B1B1B1;
+    border-radius: 5px;
+    width: 340px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+
+}
+
+.recipe-instructions {
+    font-family: 'Epilogue';
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.recipe-video-container {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+}
+
+.recipe-video {
+    width: 300px;
+    height: 250px;
+}
+
+.grey {
+    background-color: #0a0909ec;
+    position: absolute;
+    width: 360px;
+    height: 190px;
+    top: -3px;
+    opacity: 0.5;
+    border-radius: 5px;
+
+}
+
+.video-h3 {
+    font-family: 'Epilogue';
+    font-weight: 600;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.start-recipe-btn {
+    width: 300px;
+    height: 50px;
+    background-color: #FCC436;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

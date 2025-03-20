@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap');
+
+.recipe-ingredients-list-progress {
+    list-style: none;
+    border: 0.55px solid #B1B1B1;
+    border-radius: 5px;
+    width: 340px;
+}
+
+.checkbox {
+    position: absolute;
+    margin-top: 2px;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #FCC436;
+    border-radius: 3px;
+    margin-left: -25px;
+}
+
+.checkbox:checked {
+    background-color: #FCC436; 
+}
+
+.checkbox:checked::after {
+    content: '✔'; 
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}

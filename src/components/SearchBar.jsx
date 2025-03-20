@@ -18,6 +18,20 @@ export default function SearchBar() {
     }
   }, [pedido]);
 
+  useEffect(() => {
+    const { pathname } = window.location;
+    async function fethData() {
+      const url = pathname === '/meals'
+        ? 'https://www.themealdb.com/api/json/v1/1/search.php?s='
+        : 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=a';
+
+      const response = await fetch(url);
+      const data = await response.json();
+      setPedido(data);
+    }
+    fethData();
+  }, []);
+
   const handleInput = ({ target }) => {
     const { name } = target;
     setOption(name);

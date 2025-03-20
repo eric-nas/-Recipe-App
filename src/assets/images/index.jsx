@@ -4,6 +4,11 @@ import logoRecipes from './logo Recipes.svg';
 import iconeRecipes from './ícone Recipes app.svg';
 import iconePrato from './icone-prato.svg';
 import iconeBebida from './icone-bebida.svg';
+import emojiShortcake from './emoji _shortcake.svg';
+import emojiDrink from './emoji _drink.svg';
+import like from './like.svg';
+import vector from './Vector.svg';
 
 export { profileIcon, searchIconimg, logoRecipes,
-  iconeRecipes, iconePrato, iconeBebida };
+  iconeRecipes, iconePrato, iconeBebida, emojiShortcake,
+  emojiDrink, like, vector };

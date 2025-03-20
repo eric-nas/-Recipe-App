@@ -64,10 +64,7 @@
 
 .recipe-cards {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
-    /* justify-content: center; */
-    /* align-items: center; */
     top: 180px;
     width: 360px;
     position: absolute;
@@ -77,17 +74,13 @@
 .recipe-img {
     border: 1px solid #B1B1B1;
     top: 40px;
-    /* position: absolute; */
     width: 150px;
     height: 150px;
-    /* margin: 10px; */
     border-radius: 5px;
     margin-bottom: 50px;
 }
 
 .recipe-name {
-    /* position: absolute; */
-    /* border: 2px solid #B1B1B1; */
     border-radius: 5px;
     font-weight: bold;
     /* background-color: #41197F; */

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { profileIcon, searchIconimg, logoRecipes, iconeRecipes,
@@ -10,6 +10,13 @@ function Header(props) {
   const { title, searchIcon } = props;
   const history = useHistory();
   const [showInput, setShowInput] = useState(true);
+
+  useEffect(() => {
+    if (title === 'Profile') {
+      setShowInput(false);
+    }
+  }, [title]);
+
   console.log('render');
   return (
     <div className="header-container">
