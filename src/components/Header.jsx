@@ -12,12 +12,11 @@ function Header(props) {
   const [showInput, setShowInput] = useState(true);
 
   useEffect(() => {
-    if (title === 'Profile') {
+    if (title === 'Profile' || title === 'Done Recipes') {
       setShowInput(false);
     }
   }, [title]);
 
-  console.log('render');
   return (
     <div className="header-container">
       <img

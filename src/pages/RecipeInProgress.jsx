@@ -29,29 +29,45 @@ function RecipeInProgress(props) {
   }, [match.params, type]);
 
   useEffect(() => {
-    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
-    if (favoriteRecipes) {
-      const pedidoNome = pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink;
-      if (favoriteRecipes.includes(pedidoNome)) {
-        setLikeIcon(true);
-      }
-    }
+    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
+    const pedidoNome = pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink;
+    const isFavorite = favoriteRecipes.some((recipeFav) => recipeFav.strMeal
+      === pedidoNome
+      || recipeFav.strDrink === pedidoNome);
+    setLikeIcon(isFavorite);
   }, [pedido]);
 
   function likeButton() {
-    const pedidoNome = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
-    if (pedidoNome.includes(pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink)) {
-      const filterRecipeName = pedidoNome.filter((item) => item
-      !== pedido.meals?.[0].strMeal
-      || pedido.drinks?.[0].strDrink);
-      localStorage.setItem('favoriteRecipes', JSON.stringify(filterRecipeName));
+    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
+    if (favoriteRecipes.some((recipeFav) => recipeFav.strMeal
+      === pedido.meals?.[0]?.strMeal
+      && recipeFav.strDrink === pedido.drinks?.[0]?.strDrink)) {
+      const filterRecipe = favoriteRecipes.filter((item) => item.strMeal
+      !== pedido.meals?.[0]?.strMeal
+      || item.strDrink !== pedido.drinks?.[0]?.strDrink);
+      localStorage.setItem('favoriteRecipes', JSON.stringify(filterRecipe));
       setLikeIcon(false);
     } else {
-      pedidoNome.push(pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink);
-      localStorage.setItem('favoriteRecipes', JSON.stringify(pedidoNome));
+      const newRecipe = pedido.meals?.[0] || pedido.drinks?.[0];
+      favoriteRecipes.push(newRecipe);
+      localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
       setLikeIcon(true);
     }
   }
+
+  const finishRecipe = () => {
+    const doneRecipes = JSON.parse(localStorage.getItem('doneRecipes')) || [];
+    const recipeDoneExist = doneRecipes.filter((recipeDone) => recipeDone.idMeal
+    !== recipe.idMeal
+    || recipeDone.idDrink !== recipe.idDrink);
+    const date = new Date();
+    const day = date.toLocaleDateString('pt-BR', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+    });
+    recipe.doneDay = `Done in: ${day}`;
+    localStorage.setItem('doneRecipes', JSON.stringify([...recipeDoneExist, recipe]));
+    history.push('/done-recipes');
+  };
 
   const getIngredients = () => Array.from({ length: 20 }, (_, i) => {
     const ingredient = recipe?.[`strIngredient${i + 1}`];
@@ -126,7 +142,7 @@ function RecipeInProgress(props) {
       )}
       <button
         className="start-recipe-btn"
-        onClick={ () => { history.push('/done-recipes'); } }
+        onClick={ finishRecipe }
       >
         Finish Recipe
       </button>

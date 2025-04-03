@@ -27,26 +27,30 @@ function MealDetails({ match, type }) {
   }, [match.params, type]);
 
   useEffect(() => {
-    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
-    if (favoriteRecipes) {
-      const pedidoNome = pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink;
-      if (favoriteRecipes.includes(pedidoNome)) {
-        setLikeIcon(true);
-      }
-    }
+    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
+    const pedidoNome = pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink;
+    const isFavorite = favoriteRecipes.some((recipeFav) => recipeFav.strMeal
+        === pedidoNome
+        || recipeFav.strDrink === pedidoNome);
+    setLikeIcon(isFavorite);
   }, [pedido]);
 
   function likeButton() {
-    const pedidoNome = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
-    if (pedidoNome.includes(pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink)) {
-      const filterRecipeName = pedidoNome.filter((item) => item
-      !== pedido.meals?.[0].strMeal
-      || pedido.drinks?.[0].strDrink);
-      localStorage.setItem('favoriteRecipes', JSON.stringify(filterRecipeName));
+    const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
+    console.log(favoriteRecipes[0].strMeal);
+    setLikeIcon(true);
+    if (favoriteRecipes.some((recipeFav) => recipeFav.strMeal
+      === pedido.meals?.[0]?.strMeal
+      && recipeFav.strDrink === pedido.drinks?.[0]?.strDrink)) {
+      const filterRecipe = favoriteRecipes.filter((item) => item.strMeal
+      !== pedido.meals?.[0]?.strMeal
+      || item.strDrink !== pedido.drinks?.[0]?.strDrink);
+      localStorage.setItem('favoriteRecipes', JSON.stringify(filterRecipe));
       setLikeIcon(false);
     } else {
-      pedidoNome.push(pedido.meals?.[0].strMeal || pedido.drinks?.[0].strDrink);
-      localStorage.setItem('favoriteRecipes', JSON.stringify(pedidoNome));
+      const newRecipe = pedido.meals?.[0] || pedido.drinks?.[0];
+      favoriteRecipes.push(newRecipe);
+      localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));
       setLikeIcon(true);
     }
   }

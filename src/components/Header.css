@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap');
+
 .btn-profile {
     background: #FCDC36;
     border: none;
@@ -21,6 +23,9 @@
 }
 
 .header-title {
+    font-family: 'Epilogue';
+    letter-spacing: 1px;
+    font-size: 28px;
     display: flex;
     align-items: center;
     width: 100%;

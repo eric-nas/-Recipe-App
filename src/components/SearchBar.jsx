@@ -7,6 +7,7 @@ export default function SearchBar() {
   const [option, setOption] = useState('');
   const [pedido, setPedido] = useState([]);
   const [input, setInput] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
     const { pathname } = window.location;
@@ -142,18 +143,24 @@ export default function SearchBar() {
               data-testid={ `${index}-recipe-card` }
               key={ index }
             >
-              <p
-                className="recipe-name"
-                data-testid={ `${index}-card-name` }
+              <button
+                className="recipe-card-button"
+                type="button"
+                onClick={ () => history.push(`/meals/${item.idMeal}`) }
               >
-                {item.strMeal}
-              </p>
-              <img
-                className="recipe-img"
-                data-testid={ `${index}-card-img` }
-                src={ item.strMealThumb }
-                alt={ item.strMeal }
-              />
+                <img
+                  className="recipe-img"
+                  data-testid={ `${index}-card-img` }
+                  src={ item.strMealThumb }
+                  alt={ item.strMeal }
+                />
+                <p
+                  className="recipe-name"
+                  data-testid={ `${index}-card-name` }
+                >
+                  {item.strMeal}
+                </p>
+              </button>
             </div>
           )) : <p />
         }
@@ -165,18 +172,24 @@ export default function SearchBar() {
               data-testid={ `${index}-recipe-card` }
               key={ index }
             >
-              <p
-                className="recipe-name"
-                data-testid={ `${index}-card-name` }
+              <button
+                className="recipe-card-button"
+                type="button"
+                onClick={ () => history.push(`/drinks/${item.idDrink}`) }
               >
-                {item.strDrink}
-              </p>
-              <img
-                className="recipe-img"
-                data-testid={ `${index}-card-img` }
-                src={ item.strDrinkThumb }
-                alt={ item.strDrink }
-              />
+                <img
+                  className="recipe-img"
+                  data-testid={ `${index}-card-img` }
+                  src={ item.strDrinkThumb }
+                  alt={ item.strDrink }
+                />
+                <p
+                  className="recipe-name"
+                  data-testid={ `${index}-card-name` }
+                >
+                  {item.strDrink}
+                </p>
+              </button>
             </div>
           )) : <p />
         }
