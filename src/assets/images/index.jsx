@@ -12,8 +12,12 @@ import DoneIcon from './Done Icon.svg';
 import fastFood from './All.svg';
 import foods from './foods.svg';
 import drinks from './drinks.svg';
+import done from './done.svg';
+import favorite from './favorite.svg';
+import logout from './Logout.svg';
+import perfil from './Perfil.svg';
 
 export { profileIcon, searchIconimg, logoRecipes,
   iconeRecipes, iconePrato, iconeBebida, emojiShortcake,
   emojiDrink, like, vector, DoneIcon, fastFood,
-  foods, drinks };
+  foods, drinks, done, favorite, logout, perfil };

@@ -37,7 +37,6 @@ function MealDetails({ match, type }) {
 
   function likeButton() {
     const favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
-    console.log(favoriteRecipes[0].strMeal);
     setLikeIcon(true);
     if (favoriteRecipes.some((recipeFav) => recipeFav.strMeal
       === pedido.meals?.[0]?.strMeal
