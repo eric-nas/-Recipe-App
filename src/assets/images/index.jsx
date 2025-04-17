@@ -16,8 +16,10 @@ import done from './done.svg';
 import favorite from './favorite.svg';
 import logout from './Logout.svg';
 import perfil from './Perfil.svg';
+import likeFavorite from './FavoriteRecipes.svg';
 
 export { profileIcon, searchIconimg, logoRecipes,
   iconeRecipes, iconePrato, iconeBebida, emojiShortcake,
   emojiDrink, like, vector, DoneIcon, fastFood,
-  foods, drinks, done, favorite, logout, perfil };
+  foods, drinks, done, favorite, logout, perfil,
+  likeFavorite };

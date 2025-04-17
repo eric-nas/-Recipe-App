@@ -12,7 +12,9 @@ function Header(props) {
   const [showInput, setShowInput] = useState(true);
 
   useEffect(() => {
-    if (title === 'Profile' || title === 'Done Recipes') {
+    if (title === 'Profile' || title === 'Done Recipes'
+      || title === 'Favorite'
+    ) {
       setShowInput(false);
     }
   }, [title]);
